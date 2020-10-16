@@ -1,30 +1,46 @@
 import React from "react"
-import { Link } from "gatsby"
+import { Link, useStaticQuery, graphql } from "gatsby"
 import Navegacion from "./navegacion"
-import { css } from '@emotion/core'
+import { css } from "@emotion/core"
 
 const Header = () => {
+  // Consultar el logo.svg
+
+  const { logo } = useStaticQuery(graphql`
+    query {
+      logo: file(relativePath: { eq: "logo.svg" }) {
+        publicURL
+      }
+    }
+  `)
+
+  console.log(logo)
+
   return (
-    <header css={css`
+    <header
+      css={css`
         background-color: #0d283b;
         padding: 1rem;
-    `}>
-      <div css={css`
-        max-width: 120rem;
-        margin: 0 auto;
-        text-align: center;
+      `}
+    >
+      <div
+        css={css`
+          max-width: 120rem;
+          margin: 0 auto;
+          text-align: center;
 
-        @media(min-width: 768px){
+          @media (min-width: 768px) {
             display: flex;
             align-items: center;
             justify-content: space-between;
-        }
-      `}>
+          }
+        `}
+      >
         <Link to={"/"}>
-            Bienes Raices
+          <img src={logo.publicURL} alt="Logotipo Bienes Raices"/>
         </Link>
 
-        <Navegacion/>
+        <Navegacion />
       </div>
     </header>
   )
