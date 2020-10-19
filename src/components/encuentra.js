@@ -21,8 +21,6 @@ const Encuentra = () => {
     }
   `)
 
-  console.log(imagen)
-
   return (
     <ImageBackground tag="section" fluid={imagen.sharp.fluid} fadeIn="soft">
       <div className={heroCSS.imagenbg}>

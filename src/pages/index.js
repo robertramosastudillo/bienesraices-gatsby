@@ -16,8 +16,6 @@ const Index = () => {
   const inicio = useInicio()
   const { nombre, contenido, imagen } = inicio[0]
 
-  console.log(imagen)
-
   return (
     <Layout>
       <ImagenBackground tag="section" fluid={imagen.sharp.fluid} fadeIn="soft">
