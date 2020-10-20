@@ -43,7 +43,6 @@ const Contenido = styled.div`
 const PropiedadReview = ({ propiedad }) => {
   const {
     nombre,
-    descripcion,
     imagen,
     wc,
     estacionamiento,
@@ -64,7 +63,7 @@ const PropiedadReview = ({ propiedad }) => {
           habitaciones={habitaciones}
         />
 
-        <Boton to={urlSug(nombre)}>Visitar Propiedad</Boton>
+        <Boton to={`/${urlSug(nombre)}`}>Visitar Propiedad</Boton>
       </Contenido>
     </Card>
   )
